@@ -1,0 +1,133 @@
+.st-testimonials {
+	position: relative;
+	color: var(--white);
+
+	.st-testimonials__all {
+		@include flex-col;
+		gap: 2rem;
+
+		@media (min-width: 600px) {
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+	}
+
+	.st-testimonial {
+		@include bs;
+		color: var(--color-2);
+		border: 1px solid var(--color-2);
+		padding: 2rem;
+
+		flex: 1 1 48%;
+
+		@include flex-col;
+		align-items: flex-start;
+
+		.st-testimonial__title {
+			font-weight: 700;
+			font-size: 22px;
+			margin-bottom: 3rem;
+			position: relative;
+
+			@include limbo-min {
+				font-size: 25px;
+			}
+
+			&:before {
+				content: "";
+				bottom: -1px;
+				width: 19px;
+				background: var(--color-3);
+				left: -6px;
+				height: 2px;
+				position: absolute;
+				transition: var(--st);
+			}
+
+			&:after {
+				content: "";
+				bottom: -1px;
+				height: 19px;
+				background: var(--color-3);
+				left: -6px;
+				width: 2px;
+				position: absolute;
+				transition: var(--st);
+			}
+		}
+
+		.st-testimonial__desc {
+			font-size: 17px;
+			line-height: 1.4;
+			font-weight: 500;
+			flex: 1;
+
+			@include limbo-min {
+				font-size: 18px;
+			}
+
+			div {
+				margin-bottom: 15px;
+
+				p {
+					&:not(:last-child) {
+						margin-bottom: 1rem;
+					}
+				}
+			}
+
+			svg {
+				color: #ffdf00;
+				width: 120px;
+			}
+		}
+
+		.st-testimonial__name {
+			font-size: 18px;
+			display: block;
+			margin-top: 2rem;
+			font-weight: 600;
+			color: var(--color-3);
+			padding: 4px 8px;
+			border: 1px solid var(--color-3);
+		}
+	}
+
+	.btns {
+		justify-content: center;
+		margin-top: 7rem;
+	}
+}
+
+.home {
+	.st-testimonials {
+		.b-title {
+			color: var(--white);
+
+			.b-title__prefix {
+				color: var(--color-1);
+			}
+		}
+
+		.st-testimonial {
+			@include bs;
+			color: var(--white);
+			border: 1px solid var(--white);
+
+			@include flex-col;
+			align-items: flex-start;
+
+			.st-testimonial__desc {
+				svg {
+					color: #ffdf00;
+					color: var(--white);
+				}
+			}
+
+			.st-testimonial__name {
+				color: var(--color-1);
+				border: 1px solid var(--color-1);
+			}
+		}
+	}
+}

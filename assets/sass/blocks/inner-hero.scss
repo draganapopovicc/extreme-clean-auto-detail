@@ -1,0 +1,64 @@
+.st_inner-hero {
+	position: relative;
+
+	@include limbo-min {
+		min-height: 45svh;
+	}
+
+	@include desk-min {
+		min-height: 55svh;
+	}
+
+	.st_hero__container {
+		@include flex-center;
+		justify-content: center;
+		text-align: center;
+
+		@include limbo-min {
+			min-height: 45svh;
+		}
+
+		@include desk-min {
+			min-height: 55svh;
+		}
+	}
+
+	.block_bg {
+		&:after {
+			content: "";
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background: hsla(0, 0%, 0%, 0.667);
+		}
+	}
+
+	.st_inner-hero__content {
+		padding-block: 8rem;
+		width: 100%;
+
+		@include tab-min {
+			padding-block: 12rem;
+		}
+
+		@include desk-min {
+			margin-top: 100px;
+		}
+	}
+
+	.b-title {
+		align-items: center;
+
+		.b-title__main {
+			font-size: 7.5rem;
+		}
+
+		.b-title__intro {
+			@include limbo-min {
+				font-size: 21px;
+			}
+		}
+	}
+}

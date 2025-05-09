@@ -1,0 +1,104 @@
+.b-title {
+	@include flex-col;
+	align-items: flex-start;
+	gap: 2rem;
+
+	&.b-title-section {
+		margin-bottom: 6rem;
+		color: var(--dark);
+		.b-title__prefix {
+			color: var(--color-3);
+		}
+
+		.b-title__main {
+			line-height: 1.1;
+			max-width: 1100px;
+
+			@include limbo-min {
+				width: 90%;
+			}
+
+			span {
+				color: var(--color-3);
+			}
+		}
+
+		.b-title__intro {
+			max-width: 980px;
+		}
+	}
+
+	&.b-title-h1 {
+		color: var(--white);
+		.b-title__main {
+			color: var(--color-1);
+		}
+
+		.b-title__prefix {
+			font-weight: 700;
+		}
+
+		.b-title__intro {
+			max-width: 800px;
+			font-weight: 600;
+		}
+	}
+
+	.b-title__main {
+		font-weight: 700;
+		max-width: 1000px;
+		letter-spacing: 1px;
+		margin-bottom: 0;
+		line-height: 1.2;
+
+		@media (max-width: 500px) {
+			font-size: 8.5vw;
+		}
+	}
+
+	.b-title__prefix {
+		font-size: 18px;
+		letter-spacing: 1px;
+		display: flex;
+		align-items: center;
+		gap: 7px;
+		line-height: 1.3;
+		text-transform: uppercase;
+		font-weight: 700;
+
+		@include limbo-min {
+			font-size: 19px;
+		}
+	}
+
+	.b-title__intro {
+		line-height: 1.4;
+		font-size: 18px;
+
+		@include limbo-min {
+			font-size: 20px;
+		}
+
+		p {
+			&:not(:last-child) {
+				margin-bottom: 1rem;
+			}
+		}
+
+		a {
+			text-decoration: underline;
+			color: var(--color-3);
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+
+		.b-title__intro-list {
+			@include tab-min {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+			}
+		}
+	}
+}

@@ -1,0 +1,183 @@
+// Buttons
+.btns {
+	display: flex;
+	gap: 2rem;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+@mixin btn {
+	width: fit-content;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	text-align: center;
+	min-width: 150px;
+	box-sizing: border-box;
+	transition: var(--st);
+	position: relative;
+	overflow: hidden;
+	font-size: 17px;
+	line-height: 1;
+	text-align: center;
+	font-weight: 600;
+	position: relative;
+	z-index: 1;
+	color: var(--white);
+	background: var(--color-2);
+	overflow: hidden;
+	transition: color 0.6s linear;
+	letter-spacing: 1px;
+	padding: 15px 30px;
+
+	@include limbo-min {
+		font-size: 18px;
+		min-height: 54px;
+	}
+
+	@include mob-only {
+		width: 100%;
+	}
+
+	&:before {
+		content: "";
+		position: absolute;
+		height: 50%;
+		width: 0;
+		transition: 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+		z-index: -1;
+		top: 0;
+		left: 0;
+		right: auto;
+		background: var(--color-3);
+	}
+
+	&:hover {
+		color: var(--white);
+
+		&:before {
+			width: 100%;
+			right: 0;
+			left: auto;
+		}
+
+		&:after {
+			width: 100%;
+			left: 0;
+			right: auto;
+		}
+
+		span {
+			&::after {
+				background: var(--white);
+			}
+		}
+	}
+
+	&:after {
+		content: "";
+		position: absolute;
+		height: 50%;
+		width: 0;
+		transition: 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+		z-index: -1;
+		bottom: 0;
+		right: 0;
+		left: auto;
+		background: var(--color-3);
+	}
+
+	span {
+		&::after {
+			content: "";
+			-webkit-mask: url('data:image/svg+xml; utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="20px" height="20px" viewBox="0 0 20 20"><path d="M10 .4C4.697.4.399 4.698.399 10A9.6 9.6 0 0 0 10 19.601c5.301 0 9.6-4.298 9.6-9.601 0-5.302-4.299-9.6-9.6-9.6zm-.001 17.2a7.6 7.6 0 1 1 0-15.2 7.6 7.6 0 1 1 0 15.2zM10 8H6v4h4v2.5l4.5-4.5L10 5.5V8z"/></svg>');
+			background: var(--white);
+			width: 20px;
+			height: 20px;
+			display: inline-block;
+			-webkit-mask-size: cover;
+			mask-size: cover;
+			position: relative;
+			transition: var(--st);
+			bottom: -2px;
+		}
+	}
+}
+
+@mixin btn-1 {
+	@include btn;
+}
+
+@mixin btn-2 {
+	@include btn;
+	color: var(--white);
+	background: var(--color-3);
+
+	&:hover {
+		color: var(--white);
+
+		span {
+			&::after {
+				background: var(--white);
+			}
+		}
+	}
+
+	&:before {
+		background: var(--color-2);
+	}
+
+	&:after {
+		background: var(--color-2);
+	}
+
+	span {
+		&::after {
+			background: var(--white);
+		}
+	}
+}
+
+@mixin btn-3 {
+	@include btn;
+	background: none;
+	color: var(--white);
+	box-shadow: inset 0 0 0 2px white;
+
+	&:hover {
+		color: var(--color-3);
+
+		span {
+			&::after {
+				background: var(--color-3);
+			}
+		}
+	}
+
+	&:before {
+		background: var(--white);
+	}
+
+	&:after {
+		background: var(--white);
+	}
+
+	span {
+		&::after {
+			background: var(--white);
+		}
+	}
+}
+
+.btn-1 {
+	@include btn-1;
+}
+
+.btn-2 {
+	@include btn-2;
+}
+
+.btn-3 {
+	@include btn-3;
+}

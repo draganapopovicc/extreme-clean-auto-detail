@@ -1,0 +1,281 @@
+.st-contact__form {
+	margin-block: 10rem 10rem;
+
+	@include desk-min {
+		margin-block: 10rem 12rem;
+	}
+
+	.b-title {
+		@include limbo-min {
+			margin-bottom: 5rem;
+		}
+
+		.b-title__main {
+			margin-top: 0;
+			color: var(--color-3);
+		}
+
+		.b-title__intro {
+			margin-top: 0;
+		}
+	}
+
+	.st-contact__info {
+		display: grid;
+		gap: 8rem;
+		margin-block: 10rem 10rem;
+
+		@include limbo-min {
+			grid-template-columns: 1.2fr 1fr;
+			gap: 4rem;
+		}
+
+		@include desk-min {
+			margin-block: 10rem 12rem;
+		}
+
+		.st-contact__info-items {
+			position: relative;
+			background: var(--color-2);
+			transition: var(--st);
+			flex-direction: column;
+			display: flex;
+			justify-content: center;
+
+			.st-contact__info-item {
+				color: var(--white);
+				text-align: center;
+				padding-block: 5rem;
+				margin-inline: 2rem;
+
+				&:not(:last-child) {
+					border-bottom: 2px solid var(--color-3);
+				}
+
+				@include limbo-min {
+					padding-block: 3rem;
+				}
+
+				&:hover {
+					.st-contact__icon {
+						background: var(--white);
+
+						svg {
+							color: var(--color-3);
+						}
+					}
+				}
+
+				.st-contact__icon {
+					@include flex-center;
+					width: 60px;
+					height: 60px;
+					background: var(--color-1);
+					flex: 0 0 auto;
+					margin-inline: auto;
+					transition: var(--st);
+
+					svg {
+						color: var(--color-2);
+						width: 35px;
+						height: 35px;
+						transition: var(--st);
+					}
+
+					@include limbo-min {
+						width: 70px;
+						height: 70px;
+
+						svg {
+							width: 42px;
+							height: 42px;
+						}
+					}
+				}
+
+				.st-contact__info-wrap {
+					p {
+						font-size: 16px;
+						font-weight: 700;
+						margin-block: 2rem;
+						text-transform: uppercase;
+						color: var(--color-3);
+
+						@include limbo-min {
+							font-size: 18px;
+						}
+					}
+
+					span {
+						font-size: 20px;
+						font-weight: 600;
+						letter-spacing: 1px;
+
+						@include limbo-min {
+							font-size: 22px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.st-contact__form-shortcode {
+	position: relative;
+
+	div.wpforms-container-full:not(:empty) {
+		margin: 0;
+		form {
+			.wpforms-field-container {
+				.wpforms-field {
+					padding-block: 0 15px !important;
+
+					.wpforms-field-label {
+						color: var(--color-2);
+						font-weight: 600;
+
+						.wpforms-required-label {
+							color: var(--color-3);
+							font-weight: 600;
+						}
+
+						span {
+							color: var(--color-2);
+						}
+					}
+
+					label {
+						color: var(--color-2);
+					}
+
+					input,
+					textarea {
+						border-radius: 0;
+						background: transparent;
+
+						&::placeholder {
+							color: #000;
+						}
+
+						&:focus,
+						&:active {
+							box-shadow: none !important;
+							border-color: var(--color-3);
+						}
+					}
+
+					&.wpforms-field-checkbox {
+						margin-block: 2rem;
+					}
+
+					input[type="checkbox"]:checked {
+						border: none;
+
+						&:before {
+							border-color: none;
+							box-shadow: 0 0 0 1px var(--color-3),
+								0px 1px 2px rgba(0, 0, 0, 0.15);
+							background: var(--color-3);
+							border-color: transparent;
+							&:focus,
+							&:active {
+								border-color: transparent;
+							}
+						}
+
+						&:after {
+							border-left: 4px solid var(--white);
+							border-bottom: 4px solid var(--white);
+						}
+					}
+
+					input[type="checkbox"]:focus,
+					input[type="checkbox"]:active {
+						&:before {
+							border-color: var(--color-3) !important;
+						}
+					}
+				}
+			}
+		}
+
+		.wpforms-submit-container {
+			button[type="submit"].wpforms-submit {
+				min-width: 210px;
+				text-align: center;
+				display: flex;
+				align-items: center;
+				gap: 10px;
+				justify-content: center;
+				border-radius: 0;
+				letter-spacing: 1px;
+				padding: 15px 30px;
+				color: var(--white);
+				background: var(--color-3);
+				min-height: 54px;
+
+				@include limbo-min {
+					font-size: 18px;
+				}
+
+				@include mob-only {
+					width: 100%;
+				}
+
+				&::after {
+					content: "";
+					-webkit-mask: url('data:image/svg+xml; utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="20px" height="20px" viewBox="0 0 20 20"><path d="M10 .4C4.697.4.399 4.698.399 10A9.6 9.6 0 0 0 10 19.601c5.301 0 9.6-4.298 9.6-9.601 0-5.302-4.299-9.6-9.6-9.6zm-.001 17.2a7.6 7.6 0 1 1 0-15.2 7.6 7.6 0 1 1 0 15.2zM10 8H6v4h4v2.5l4.5-4.5L10 5.5V8z"/></svg>');
+					background: var(--white);
+					width: 20px;
+					height: 20px;
+					display: inline-block;
+					-webkit-mask-size: cover;
+					mask-size: cover;
+					transition: var(--st);
+				}
+
+				&:active,
+				&:focus {
+					border: none;
+
+					&:after {
+						border: none;
+					}
+				}
+
+				&:hover {
+					background: var(--color-2) !important;
+				}
+
+				@include tab-max {
+					margin-inline: auto;
+					height: 46px;
+				}
+			}
+		}
+	}
+}
+
+//Map
+.st-contact__map-wrap {
+	margin-top: 10rem;
+	border-top: 5px solid var(--color-3);
+	border-bottom: 5px solid var(--color-3);
+
+	@include limbo-min {
+		display: grid;
+		grid-template-columns: 1.2fr 1fr;
+	}
+
+	.st-contact__map {
+		iframe {
+			width: 100%;
+			height: 100%;
+
+			@include tab-max {
+				height: 420px;
+			}
+		}
+	}
+}

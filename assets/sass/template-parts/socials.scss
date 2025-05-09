@@ -1,0 +1,20 @@
+.st-socials {
+	display: flex;
+	align-items: center;
+	gap: 13px;
+
+	.st_icon {
+		color: var(--color-1);
+		transition: var(--st);
+		line-height: 1;
+
+		&:hover {
+			transform: scale(1.2);
+		}
+
+		svg {
+			width: 20px;
+			height: 20px;
+		}
+	}
+}

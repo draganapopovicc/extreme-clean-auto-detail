@@ -1,0 +1,29 @@
+.st-single-service {
+	.b-title {
+		.b-title__intro {
+			max-width: 90%;
+		}
+	}
+
+	.st-single-service__images {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 7px;
+
+		figure {
+			flex: 1 1 45%;
+
+			@include tab-min {
+				flex: 1 1 25%;
+			}
+
+			@include limbo-min {
+				flex: 1 1 17%;
+			}
+
+			img {
+				aspect-ratio: 4/3;
+			}
+		}
+	}
+}

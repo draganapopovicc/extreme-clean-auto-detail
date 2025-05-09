@@ -1,0 +1,35 @@
+.st_contact-info {
+	@include clean-list;
+	display: flex;
+	align-items: center;
+
+	li {
+		a {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			line-height: 1;
+		}
+
+		svg {
+			flex: 0 0 20px;
+		}
+
+		&.work-time {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			.work-time__wrap {
+				display: flex;
+				align-items: flex-start;
+				// gap: 5px;
+			}
+
+			.work-time__hours {
+				display: flex;
+				align-items: center;
+				gap: 8px;
+			}
+		}
+	}
+}
